@@ -31,7 +31,7 @@ class JwtAuthentication
 		try {
             $decoded = JwtWrapper::decode($jwt);
             $this->container->token->hydrate($decoded);
-        } catch(Exception $ex) {
+        } catch(\Exception $ex) {
             $data['status'] = 'error';
             $data['message'] = 'Unauthorized access';
             
